@@ -156,9 +156,11 @@ def main_handler(event, context):
 
         if 'g' in dataDict[i]['qq']:
             dataDict[i]['qq'] = dataDict[i]['qq'][1:]
-            QQGroupPusher(dataDict[i]['qq'], dataList)
+            #QQGroupPusher(dataDict[i]['qq'], dataList)
+            QmsgPusher(dataDict[i]['qq'], dataList,1)
         else:
-            QQPusher(dataDict[i]['qq'], dataList)
+            #QQPusher(dataDict[i]['qq'], dataList)
+            QmsgPusher(dataDict[i]['qq'], dataList,0)
         print("---天气推送成功！---")
         time.sleep(20)
         
